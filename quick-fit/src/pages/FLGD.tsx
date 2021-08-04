@@ -69,7 +69,6 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
       <IonContent>
         <h1 className='ion-text-center'>F L G D</h1>
         <IonSearchbar></IonSearchbar>
-
         <IonGrid>
           <IonRow>
             <IonCol>
@@ -88,15 +87,17 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
                 <IonCardHeader>Mens T Shirt</IonCardHeader>
                 <IonCardHeader>$19.99</IonCardHeader>
                 <IonCardContent>
-                  <IonButton onClick={() => addCart('001')}>
-                    <IonIcon icon={cartOutline} />
+                  <IonButton
+                    shape='round'
+                    color='success'
+                    onClick={() => addCart('001')}
+                  >
+                    <IonIcon icon={cartOutline} color='medium' />
                   </IonButton>
-                  <IonLabel>Cart</IonLabel>
                 </IonCardContent>
                 <IonCardContent>
-                  <IonButton>
+                  <IonButton shape='round'>
                     <IonIcon icon={cameraOutline} />
-                    <IonLabel>Model</IonLabel>
                   </IonButton>
                 </IonCardContent>
               </IonCard>

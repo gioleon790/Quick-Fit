@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import {
   IonCard,
   IonContent,
@@ -38,6 +38,7 @@ import Brands from './pages/Brands'
 import Checkout from './pages/Checkout'
 import Description from './pages/Description'
 import Modelbody from './pages/Modelbody'
+import Login from './pages/Login'
 
 import FLGD from './pages/FLGD'
 /* Core CSS required for Ionic components to work properly */
@@ -62,8 +63,13 @@ import AeonArmor from './pages/Aeonarmor'
 import Cart from './pages/Cart'
 import Threedee from './pages/Threedee'
 import Cartt from './CartSource/Cartt'
+import UIContext from './util/Context-API-login'
+
 const App: React.FC = () => {
   const [cart, setCart] = useState<Cartt[]>([])
+  const { showTabs } = useContext(UIContext)
+
+  let tabBar = showTabs ? undefined : { display: 'none' }
 
   const addCart = (obj: Cartt) => {
     setCart([...cart, obj])
@@ -73,18 +79,21 @@ const App: React.FC = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
+            <Route exact path='/'>
+              <Redirect to='/Login' />
+            </Route>
             {/*Brands page */}
             <Route exact path='/Brands'>
               <Brands />
             </Route>
             {/*Brands Page */}
 
-            <Route exact path='/Cart'>
-              <Cart passDownTo={cart} />
+            <Route exact path='/Login'>
+              <Login />
             </Route>
 
-            <Route exact path='/'>
-              <Redirect to='/Models' />
+            <Route exact path='/Cart'>
+              <Cart passDownTo={cart} />
             </Route>
 
             <Route exact path='/FLGD'>
@@ -111,13 +120,13 @@ const App: React.FC = () => {
               <Modelbody />
             </Route>
           </IonRouterOutlet>
-          <IonTabBar slot='bottom'>
+          <IonTabBar slot='bottom' style={tabBar}>
             <IonTabButton tab='Brands' href='/brands'>
               <IonIcon icon={gridOutline} />
               <IonLabel>Brands</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab='Models' href='/Description'>
+            <IonTabButton tab='Models' href='/Threedee'>
               <IonIcon icon={cameraOutline} />
               <IonLabel>Models</IonLabel>
             </IonTabButton>

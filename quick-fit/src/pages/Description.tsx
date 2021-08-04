@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import {
   IonCard,
   IonContent,
@@ -37,8 +37,18 @@ import {
   cartOutline,
   cameraOutline,
 } from 'ionicons/icons'
+import UIContext from '../util/Context-API-login'
 
 const Description: React.FC = () => {
+  const { setShowTabs } = React.useContext(UIContext)
+
+  useEffect(() => {
+    setShowTabs(false)
+
+    return () => {
+      setShowTabs(true)
+    }
+  })
   return (
     <IonPage>
       <IonContent>

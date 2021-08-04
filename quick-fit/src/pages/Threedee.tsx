@@ -41,32 +41,11 @@ import {
 const Threedee: React.FC = () => {
   return (
     <IonPage>
-      <IonContent>
-        <IonRow>
-          <IonCol>
-            <IonCard routerLink='/Modelbody'>
-              <IonCardContent>
-                <img
-                  src='https://i.imgur.com/8mNJYMO.png'
-                  width='200'
-                  height='200'
-                />
-              </IonCardContent>
-            </IonCard>
-          </IonCol>
-          <IonCol>
-            <IonCard>
-              <IonCardContent>
-                <img
-                  src='https://i.imgur.com/Mscnkbg.png'
-                  width='200'
-                  height='200'
-                />
-              </IonCardContent>
-            </IonCard>
-          </IonCol>
-        </IonRow>
-      </IonContent>
+      <IonGrid>
+        <IonCard>
+          <img src='' />
+        </IonCard>
+      </IonGrid>
     </IonPage>
   )
 }

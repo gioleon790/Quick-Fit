@@ -57,7 +57,7 @@ const ModelChoose: React.FC = () => {
         <img src='https://i.imgur.com/XhW77Wh.png' height='500' />
       </IonCard>
       <IonCol className='ion-text-center'>
-        <IonButton color='success' routerLink='brands'>
+        <IonButton color='success' href='brands'>
           Confirm
         </IonButton>
       </IonCol>

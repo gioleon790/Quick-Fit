@@ -40,7 +40,9 @@ import {
 } from 'ionicons/icons'
 
 const Threedee: React.FC = () => {
-  const [rotateModel, setRotateModel] = useState<string>()
+  const [rotateModel, setRotateModel] = useState<string>(
+    'https://i.imgur.com/xgEY2wO.png'
+  )
   const [count, setCount] = useState<number>(0)
 
   const modelViewArray = [

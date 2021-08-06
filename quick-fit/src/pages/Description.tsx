@@ -41,6 +41,8 @@ import UIContext from '../util/Context-API-login'
 
 const Description: React.FC = () => {
   const { setShowTabs } = React.useContext(UIContext)
+  const [text, setText] = useState<string>()
+  const [number, setNumber] = useState<number>()
 
   useEffect(() => {
     setShowTabs(false)
@@ -50,7 +52,7 @@ const Description: React.FC = () => {
     }
   })
   return (
-    <IonPage>
+    <IonPage className='Helloo'>
       <IonContent>
         <IonGrid>
           <IonCard></IonCard> <IonCard></IonCard> <IonCard></IonCard>
@@ -63,7 +65,7 @@ const Description: React.FC = () => {
             width='128'
             className='Hello'
           />
-          <h1 className='ion-text-center'>Size Match</h1>
+          <h1 className='ion-text-center'>Size Match </h1>
           <IonRow>
             <IonCol>
               <IonCard>
@@ -105,7 +107,7 @@ const Description: React.FC = () => {
           <IonRow>
             <IonCol>
               <IonButton
-                routerLink='/Threedee'
+                routerLink='/ModelChoose'
                 expand='block'
                 size='small'
                 color='success'

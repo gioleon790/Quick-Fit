@@ -38,7 +38,7 @@ import Cartt from '../CartSource/Cartt'
 const FLGDclothing = [
   {
     id: '001',
-    image: 'https://i.imgur.com/N2FUTu5.png',
+    image: 'https://i.imgur.com/1anMYfh.png',
     name: 'White shirt',
     price: '$19.99',
   },
@@ -59,6 +59,7 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
 
   return (
     <IonPage>
+      {/*Top Page */}
       <IonHeader>
         <IonToolbar>
           <IonButtons slot='start'>
@@ -69,76 +70,58 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
       <IonContent>
         <h1 className='ion-text-center'>F L G D</h1>
         <IonSearchbar></IonSearchbar>
+        {/*Top Page */}
         <IonGrid>
+          {/*shirt img*/}
           <IonRow>
             <IonCol>
               <IonCard>
                 <img
-                  src='https://i.imgur.com/6yvpeM2.png'
-                  alt='nike logo'
+                  src='https://i.imgur.com/1anMYfh.png'
                   width='120'
                   height='120'
                 />
-                ]
               </IonCard>
             </IonCol>
+            {/*IonRow for shirt img*/}
             <IonCol>
               <IonCard>
                 <IonCardHeader>Mens T Shirt</IonCardHeader>
                 <IonCardHeader>$19.99</IonCardHeader>
                 <IonCardContent>
-                  <IonButton
-                    shape='round'
-                    color='success'
-                    onClick={() => addCart('001')}
-                  >
-                    <IonIcon icon={cartOutline} color='medium' />
-                  </IonButton>
-                </IonCardContent>
-                <IonCardContent>
-                  <IonButton shape='round'>
-                    <IonIcon icon={cameraOutline} />
-                  </IonButton>
+                  <IonRow>
+                    <IonCol>
+                      <IonButton
+                        shape='round'
+                        color='success'
+                        onClick={() => addCart('001')}
+                        fill='solid'
+                        size='default'
+                      >
+                        <IonIcon icon={cartOutline} color='medium' />
+                      </IonButton>
+                    </IonCol>
+                    <IonCol>
+                      <IonButton
+                        fill='outline'
+                        size='default'
+                        routerLink='Threedee'
+                      >
+                        <IonIcon icon={cameraOutline} />
+                      </IonButton>
+                    </IonCol>
+                  </IonRow>
                 </IonCardContent>
               </IonCard>
             </IonCol>
-          </IonRow>
 
-          <IonRow>
-            <IonCol>
-              <IonCard>
-                <img
-                  src='https://i.imgur.com/iTTnpxx.jpg'
-                  alt='FLGD shirt'
-                  width='120'
-                  height='120'
-                />
-              </IonCard>
-            </IonCol>
-            <IonCol>
-              <IonCard>
-                <IonCardHeader>Mens T Shirt </IonCardHeader>
-                <IonCardHeader>$19.99</IonCardHeader>
-                <IonCardContent>
-                  <IonTabBar>
-                    <IonButton onClick={() => addCart('002')}>
-                      <IonIcon icon={cartOutline} />
-                    </IonButton>
-                    <IonLabel>Cart</IonLabel>
-                  </IonTabBar>
-                </IonCardContent>
-                <IonCardContent>
-                  <IonTabButton tab='Model'>
-                    <IonIcon icon={cameraOutline} />
-                    <IonLabel>Model</IonLabel>
-                  </IonTabButton>
-                </IonCardContent>
-              </IonCard>
-            </IonCol>
+            {/*IonRow for shirt img*/}
           </IonRow>
+          {/*IonRow for shirt img*/}
         </IonGrid>
       </IonContent>
     </IonPage>
   )
 }
+
 export default FLGD

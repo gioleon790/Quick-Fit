@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from 'react'
 import {
   IonCard,
   IonContent,
@@ -20,7 +20,15 @@ import {
   IonLabel,
   IonBadge,
   IonTabs,
-} from "@ionic/react";
+  IonBackButton,
+  IonButtons,
+  IonItem,
+  IonList,
+  IonItemDivider,
+  IonInput,
+  IonButton,
+} from '@ionic/react'
+import BrandComponent from '../components/BrandComponent'
 import {
   calendar,
   personCircle,
@@ -29,29 +37,36 @@ import {
   gridOutline,
   cartOutline,
   cameraOutline,
-} from "ionicons/icons";
+} from 'ionicons/icons'
 
 const Checkout: React.FC = () => {
-return (
-
+  return (
     <IonPage>
-        <IonContent>
-        <h1 className="ion-text-center">Order Summary</h1>
-
-
-        
-
-
-
-        </IonContent>
-
-
-
-
+      <IonContent>
+        <IonRow>
+          <IonCol>
+            <IonCard>
+              <img
+                src='https://i.imgur.com/YItDaWu.png'
+                height='120'
+                width='120 '
+              />
+            </IonCard>
+          </IonCol>
+          <IonCol>
+            <IonCard>
+              <IonCardContent>Mens T Shirt</IonCardContent>
+              <IonCardContent>$19.99</IonCardContent>
+              <IonCardContent>
+                <IonButton fill='outline' size='default' routerLink='Threedee'>
+                  <IonIcon icon={cameraOutline} />
+                </IonButton>
+              </IonCardContent>
+            </IonCard>
+          </IonCol>
+        </IonRow>
+      </IonContent>
     </IonPage>
-
-
-);
-};
-
-export default Checkout;
+  )
+}
+export default Checkout

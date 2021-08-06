@@ -22,6 +22,9 @@ import {
   IonTabs,
   IonBackButton,
   IonButtons,
+  IonItem,
+  IonList,
+  IonItemDivider,
   IonInput,
   IonButton,
 } from '@ionic/react'
@@ -35,11 +38,14 @@ import {
   cartOutline,
   cameraOutline,
 } from 'ionicons/icons'
-import './Brands.css'
+
 import UIContext from '../util/Context-API-login'
+import './Login.css'
 
 const Login: React.FC = () => {
   const { setShowTabs } = React.useContext(UIContext)
+  const [text, setText] = useState<string>()
+  const [number, setNumber] = useState<number>()
 
   useEffect(() => {
     setShowTabs(false)
@@ -50,7 +56,7 @@ const Login: React.FC = () => {
   })
 
   return (
-    <IonPage>
+    <IonPage className='font'>
       <IonGrid>
         <IonRow>
           <IonCol>
@@ -59,31 +65,39 @@ const Login: React.FC = () => {
               <img
                 src='https://i.imgur.com/axid879.jpg'
                 alt=''
-                width='200'
                 height='200'
+                width='250'
               />
             </IonCard>
             <IonCardHeader>New To QuickFit? Sign Up</IonCardHeader>
-            <IonCard> Continue With Google</IonCard>
-            <IonCard>Continue With Apple</IonCard>
-
-            <h6>--------Or Continue With Email---------</h6>
 
             <h2>Email</h2>
             <IonCard>
-              ``
-              <IonInput background-color='White' value=''></IonInput>
+              <IonItem>
+                <IonInput
+                  value={text}
+                  placeholder=''
+                  onIonChange={(e) => setText(e.detail.value!)}
+                ></IonInput>
+              </IonItem>
             </IonCard>
             <h2>Password</h2>
             <IonCard>
-              <IonInput background-color='White' value=''></IonInput>
+              <IonItem>
+                <IonInput
+                  value={text}
+                  placeholder=''
+                  onIonChange={(e) => setText(e.detail.value!)}
+                ></IonInput>
+              </IonItem>
             </IonCard>
 
             <IonButton
               routerLink='/Description'
               expand='block'
               size='small'
-              color='success'
+              className='color'
+              color='secondary'
             >
               Login
             </IonButton>

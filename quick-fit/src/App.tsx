@@ -29,6 +29,7 @@ import {
   gridOutline,
   cartOutline,
   cameraOutline,
+  accessibilityOutline,
 } from 'ionicons/icons'
 
 import { Redirect, Route } from 'react-router-dom'
@@ -39,7 +40,7 @@ import Checkout from './pages/Checkout'
 import Description from './pages/Description'
 import Modelbody from './pages/Modelbody'
 import Login from './pages/Login'
-
+import ModelChoose from './pages/ModelChoose'
 import FLGD from './pages/FLGD'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -116,6 +117,10 @@ const App: React.FC = () => {
               <Threedee />
             </Route>
 
+            <Route exact path='/ModelChoose'>
+              <ModelChoose />
+            </Route>
+
             <Route exact path='/Modelbody'>
               <Modelbody />
             </Route>
@@ -123,17 +128,14 @@ const App: React.FC = () => {
           <IonTabBar slot='bottom' style={tabBar}>
             <IonTabButton tab='Brands' href='/brands'>
               <IonIcon icon={gridOutline} />
-              <IonLabel>Brands</IonLabel>
             </IonTabButton>
 
             <IonTabButton tab='Models' href='/Threedee'>
-              <IonIcon icon={cameraOutline} />
-              <IonLabel>Models</IonLabel>
+              <IonIcon icon={accessibilityOutline} />
             </IonTabButton>
 
             <IonTabButton tab='Cart' href='/Cart'>
               <IonIcon icon={cartOutline} />
-              <IonLabel>Cart</IonLabel>
             </IonTabButton>
           </IonTabBar>
         </IonTabs>

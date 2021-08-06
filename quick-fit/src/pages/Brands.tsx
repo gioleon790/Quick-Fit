@@ -36,9 +36,14 @@ import './Brands.css'
 
 const Brands: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage className='fontt'>
       <IonContent>
-        <h1 className='ion-text-center'>Brands</h1>
+        <h1 className='ion-text-center' id='fon'>
+          Brands
+        </h1>
+        <IonCard color='red'>
+          <img src='https://i.imgur.com/XhW77Wh.png' />
+        </IonCard>
         <IonSearchbar></IonSearchbar>
 
         <IonGrid>

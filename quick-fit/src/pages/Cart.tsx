@@ -63,7 +63,12 @@ const Cart: React.FC<{ passDownTo: Cartt[] }> = (props) => {
               </IonRow>
               <IonRow>
                 <IonCol className='ion-text-center'>
-                  <IonButton href='/Checkout' shape='round' color='success'>
+                  <IonButton
+                    href='/Checkout'
+                    shape='round'
+                    color='success'
+                    routerLink='Checkout'
+                  >
                     Confirm
                   </IonButton>
                 </IonCol>

@@ -60,33 +60,36 @@ const Login: React.FC = () => {
       <IonGrid>
         <IonRow>
           <IonCol>
-            <IonCardHeader className='ion-text-center'>Sign in</IonCardHeader>
+            <IonCardHeader>
+              <IonCardTitle className='ion-text-center'>Sign in</IonCardTitle>
+            </IonCardHeader>
             <IonCard>
               <img
-                src='https://i.imgur.com/axid879.jpg'
+                src='https://i.imgur.com/3oGxL42.jpg'
                 alt=''
-                height='200'
+                height='250'
                 width='250'
               />
             </IonCard>
-            <IonCardHeader>New To QuickFit? Sign Up</IonCardHeader>
 
-            <h2>Email</h2>
-            <IonCard>
+            <IonCardHeader className='ion-text-center'>
+              New To QuickFit? Sign Up
+            </IonCardHeader>
+
+            <IonCard className='cool'>
               <IonItem>
                 <IonInput
                   value={text}
-                  placeholder=''
+                  placeholder='Email'
                   onIonChange={(e) => setText(e.detail.value!)}
                 ></IonInput>
               </IonItem>
             </IonCard>
-            <h2>Password</h2>
-            <IonCard>
+            <IonCard className='cool'>
               <IonItem>
                 <IonInput
                   value={text}
-                  placeholder=''
+                  placeholder='Password'
                   onIonChange={(e) => setText(e.detail.value!)}
                 ></IonInput>
               </IonItem>
@@ -97,7 +100,7 @@ const Login: React.FC = () => {
               expand='block'
               size='small'
               className='color'
-              color='secondary'
+              color='warning'
             >
               Login
             </IonButton>

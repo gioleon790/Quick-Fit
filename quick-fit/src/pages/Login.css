@@ -1,22 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
-.font{
-font-family: 'Quicksand', sans-serif;
-
+.font {
+  font-family: 'Quicksand', sans-serif;
 }
 
-.google{
-background-color: rgba(74, 74, 206, 0.959); 
+.google {
+  background-color: rgba(74, 74, 206, 0.959);
 }
 
 .apple {
-background-color: black;
-text-decoration-color: rgb(255, 255, 255);
-
+  background-color: black;
+  text-decoration-color: rgb(255, 255, 255);
 }
 
-.color{
- border-block-color:black ;
- 
-font-family: 'Quicksand', sans-serif;
+.cool {
+  font-family: 'Quicksand', sans-serif;
 }

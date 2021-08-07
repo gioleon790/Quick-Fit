@@ -38,6 +38,7 @@ import {
   gridOutline,
   cartOutline,
   cameraOutline,
+  trashOutline,
 } from 'ionicons/icons'
 
 const Checkout: React.FC = () => {
@@ -77,16 +78,22 @@ const Checkout: React.FC = () => {
                     <IonIcon icon={cameraOutline} />
                   </IonButton>
                 </IonCardContent>
+                <IonCardContent>
+                  <IonButton fill='outline' size='default' color='danger'>
+                    {' '}
+                    <IonIcon icon={trashOutline} />{' '}
+                  </IonButton>
+                </IonCardContent>
               </IonCard>
             </IonCol>
           </IonRow>
-          <IonButton
-            color='success'
-            className='ion-text-center'
-            onClick={onSubmitHandler}
-          >
-            Send Link
-          </IonButton>
+          <IonRow>
+            <IonCol className='ion-text-center'>
+              <IonButton color='success' onClick={onSubmitHandler}>
+                Send Link
+              </IonButton>
+            </IonCol>
+          </IonRow>
         </IonContent>
       </IonPage>
     </Fragment>

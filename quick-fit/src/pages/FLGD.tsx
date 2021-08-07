@@ -32,6 +32,8 @@ import {
   gridOutline,
   cartOutline,
   cameraOutline,
+  trashOutline,
+  accessibilityOutline,
 } from 'ionicons/icons'
 import Cartt from '../CartSource/Cartt'
 
@@ -84,33 +86,26 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
               </IonCard>
             </IonCol>
             {/*IonRow for shirt img*/}
-            <IonCol>
-              <IonCard>
-                <IonCardHeader>Mens T Shirt</IonCardHeader>
-                <IonCardHeader>$19.99</IonCardHeader>
+            <IonCol className='ion-no-margin'>
+              <IonCard className='ion-no-margin'>
+                <IonCardHeader>
+                  <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
+                  <IonCardSubtitle>$19.99</IonCardSubtitle>
+                </IonCardHeader>
                 <IonCardContent>
-                  <IonRow>
-                    <IonCol>
-                      <IonButton
-                        shape='round'
-                        color='success'
-                        onClick={() => addCart('001')}
-                        fill='solid'
-                        size='default'
-                      >
-                        <IonIcon icon={cartOutline} color='medium' />
-                      </IonButton>
-                    </IonCol>
-                    <IonCol>
-                      <IonButton
-                        fill='outline'
-                        size='default'
-                        routerLink='Threedee'
-                      >
-                        <IonIcon icon={cameraOutline} />
-                      </IonButton>
-                    </IonCol>
-                  </IonRow>
+                  <IonButton
+                    // shape='round'
+                    color='success'
+                    onClick={() => addCart('001')}
+                    fill='solid'
+                    size='default'
+                  >
+                    <IonIcon icon={cartOutline} color='light' />
+                  </IonButton>
+
+                  <IonButton color='light' fill='solid'>
+                    <IonIcon icon={accessibilityOutline} />
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>

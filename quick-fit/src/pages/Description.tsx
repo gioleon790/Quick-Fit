@@ -61,56 +61,40 @@ const Description: React.FC = () => {
           <IonCol></IonCol> <IonCol></IonCol> <IonCol></IonCol>{' '}
           <IonCol></IonCol> <IonCol></IonCol>{' '}
           <img
-            src='https://i.imgur.com/axid879.jpg'
-            width='128'
+            src='https://i.imgur.com/3oGxL42.jpg'
+            width='150'
             className='Hello'
           />
           <h1 className='ion-text-center'>Size Match </h1>
           <IonRow>
             <IonCol>
-              <IonCard>
-                <IonCardContent>Height:</IonCardContent>{' '}
-              </IonCard>
+              <IonItem>
+                <IonLabel>Height</IonLabel>
+                <IonInput></IonInput>
+              </IonItem>
+              <IonItem>
+                <IonLabel>Weight</IonLabel>
+                <IonInput></IonInput>
+              </IonItem>
+              <IonItem>
+                <IonLabel>Age</IonLabel>
+                <IonInput></IonInput>
+              </IonItem>
             </IonCol>
-            <IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol className='ion-text-center'>
               <IonCard></IonCard>
-              <IonCard>
-                <IonInput background-color='White' value=''></IonInput>
-              </IonCard>
               <IonCard></IonCard>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <IonCard>
-                <IonCardContent>Weight:</IonCardContent>
-              </IonCard>
-            </IonCol>
-            <IonCol>
-              <IonCard>
-                <IonInput background-color='White' value=''></IonInput>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <IonCard>
-                <IonCardContent>Age:</IonCardContent>
-              </IonCard>
-            </IonCol>
-            <IonCol>
-              <IonCard>
-                <IonInput background-color='White' value=''></IonInput>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
+              <IonCard></IonCard>
+              <IonCard></IonCard>
+              <IonCard></IonCard>
+              <IonCard></IonCard>
               <IonButton
                 routerLink='/ModelChoose'
                 expand='block'
                 size='small'
-                color='success'
+                color='warning'
               >
                 Confirm
               </IonButton>

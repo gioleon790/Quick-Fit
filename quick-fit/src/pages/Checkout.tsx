@@ -39,7 +39,10 @@ import {
   cartOutline,
   cameraOutline,
   trashOutline,
+  accessibilityOutline,
+  arrowBackOutline,
 } from 'ionicons/icons'
+import './Checkout.css'
 
 const Checkout: React.FC = () => {
   const [alert, setAlert] = useState<boolean>()
@@ -50,46 +53,83 @@ const Checkout: React.FC = () => {
     <Fragment>
       <IonAlert
         isOpen={alert!}
-        message='Confirmation Email has been sent'
+        message='Confirmation Email Has Been Sent'
         buttons={[{ text: 'Ok', handler: () => setAlert(false) }]}
       />
       <IonPage>
-        <IonContent>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot='start'>
+              <IonBackButton />
+            </IonButtons>
+          </IonToolbar>
+        </IonHeader>
+
+        <IonContent className='LCL'>
+          <h1 className='ion-text-left'>Checkout</h1>
+          <h6>1 Item</h6>
+          <h6>___________________________________</h6>
           <IonRow>
             <IonCol>
-              <IonCard>
-                <img
-                  src='https://i.imgur.com/YItDaWu.png'
-                  height='120'
-                  width='120 '
-                />
-              </IonCard>
+              <img src='https://i.imgur.com/1anMYfh.png' />
             </IonCol>
-            <IonCol>
-              <IonCard>
-                <IonCardContent>Mens T Shirt</IonCardContent>
-                <IonCardContent>$19.99</IonCardContent>
+            <IonCol className='LCL'>
+              <IonCard className='ion-no-margin'>
+                <IonCardHeader className='LCL'>
+                  <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
+                  <IonCard></IonCard>
+                  <IonCardSubtitle>$19.99</IonCardSubtitle>
+                </IonCardHeader>
                 <IonCardContent>
                   <IonButton
-                    fill='outline'
+                    // shape='round'
+
+                    fill='solid'
                     size='default'
-                    routerLink='Threedee'
+                    color='light'
                   >
-                    <IonIcon icon={cameraOutline} />
+                    <IonIcon icon={accessibilityOutline} />
                   </IonButton>
-                </IonCardContent>
-                <IonCardContent>
-                  <IonButton fill='outline' size='default' color='danger'>
-                    {' '}
-                    <IonIcon icon={trashOutline} />{' '}
+
+                  <IonButton color='danger' fill='solid'>
+                    <IonIcon icon={trashOutline} />
                   </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>
           </IonRow>
+          <h6>___________________________________</h6>
+          <IonRow>
+            <IonCol>
+              <h6>Subtotal</h6>
+            </IonCol>
+            <IonCol>
+              <h6 className='ion-text-right'>$19.99</h6>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <h6>Tax</h6>
+            </IonCol>
+            <IonCol>
+              <h6 className='ion-text-right'>$1.29</h6>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <h4>Total</h4>
+            </IonCol>
+            <IonCol>
+              <h4 className='ion-text-right'>$21.28</h4>
+            </IonCol>
+          </IonRow>
           <IonRow>
             <IonCol className='ion-text-center'>
-              <IonButton color='success' onClick={onSubmitHandler}>
+              <IonButton
+                color='success'
+                shape='round'
+                onClick={onSubmitHandler}
+              >
                 Send Link
               </IonButton>
             </IonCol>

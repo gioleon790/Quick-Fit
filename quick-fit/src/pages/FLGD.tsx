@@ -77,18 +77,13 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
           {/*shirt img*/}
           <IonRow>
             <IonCol>
-              <IonCard>
-                <img
-                  src='https://i.imgur.com/1anMYfh.png'
-                  width='120'
-                  height='120'
-                />
-              </IonCard>
+              <img src='https://i.imgur.com/1anMYfh.png' />
             </IonCol>
             {/*IonRow for shirt img*/}
-            <IonCol className='ion-no-margin'>
+
+            <IonCol className='card'>
               <IonCard className='ion-no-margin'>
-                <IonCardHeader>
+                <IonCardHeader className='card'>
                   <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
                   <IonCardSubtitle>$19.99</IonCardSubtitle>
                 </IonCardHeader>
@@ -103,7 +98,7 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
                     <IonIcon icon={cartOutline} color='light' />
                   </IonButton>
 
-                  <IonButton color='light' fill='solid'>
+                  <IonButton color='light' fill='solid' routerLink='Threedee'>
                     <IonIcon icon={accessibilityOutline} />
                   </IonButton>
                 </IonCardContent>

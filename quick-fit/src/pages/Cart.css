@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
-.LCL {
+.font {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.Inst {
   font-family: 'Quicksand', sans-serif;
 }

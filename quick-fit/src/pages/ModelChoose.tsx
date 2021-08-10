@@ -52,23 +52,22 @@ const ModelChoose: React.FC = () => {
     }
   })
   return (
-    <IonPage>
+    <IonPage className='k'>
       <IonCard></IonCard>
       <IonCard></IonCard>
       <img src='https://i.imgur.com/XhW77Wh.png' />
       <IonCard></IonCard>
-      <IonCol className='k'>
-        <IonButton fill='outline' expand='block' color='warning' href='brands'>
+      <IonCol className='ion-text-center'>
+        <IonButton
+          fill='outline'
+          color='warning'
+          href='brands'
+          className='ion-text-center'
+        >
           Confirm
         </IonButton>{' '}
         <IonCard></IonCard>
-        <IonButton
-          expand='block'
-          fill='outline'
-          size='small'
-          color='warning'
-          href='login'
-        >
+        <IonButton fill='outline' color='warning' href='Description'>
           Cancel
         </IonButton>
       </IonCol>

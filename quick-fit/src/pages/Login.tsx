@@ -79,6 +79,7 @@ const Login: React.FC = () => {
             <IonCard className='cool'>
               <IonItem>
                 <IonInput
+                  className='font'
                   value={text}
                   placeholder='Email'
                   onIonChange={(e) => setText(e.detail.value!)}
@@ -88,6 +89,7 @@ const Login: React.FC = () => {
             <IonCard className='cool'>
               <IonItem>
                 <IonInput
+                  className='font'
                   value={text}
                   placeholder='Password'
                   onIonChange={(e) => setText(e.detail.value!)}
@@ -96,10 +98,10 @@ const Login: React.FC = () => {
             </IonCard>
 
             <IonButton
+              className='font'
               routerLink='/Description'
               expand='block'
               size='small'
-              className='color'
               color='warning'
             >
               Login

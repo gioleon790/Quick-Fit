@@ -1,48 +1,20 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {
-  IonCard,
   IonContent,
-  IonHeader,
-  IonPage,
-  IonSearchbar,
-  IonTitle,
-  IonToolbar,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
   IonGrid,
+  IonPage,
   IonRow,
   IonCol,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-  IonBadge,
-  IonTabs,
-  IonButtons,
-  IonBackButton,
-  IonList,
-  IonItemDivider,
   IonItem,
+  IonLabel,
   IonInput,
   IonButton,
 } from '@ionic/react'
-import {
-  calendar,
-  personCircle,
-  map,
-  informationCircle,
-  gridOutline,
-  cartOutline,
-  cameraOutline,
-} from 'ionicons/icons'
 import UIContext from '../util/Context-API-login'
+import './Description.css'
 
-const Description: React.FC = () => {
-  const { setShowTabs } = React.useContext(UIContext)
-  const [text, setText] = useState<string>()
-  const [number, setNumber] = useState<number>()
+const SizeMatch: React.FC = () => {
+  const { setShowTabs } = useContext(UIContext)
 
   useEffect(() => {
     setShowTabs(false)
@@ -51,50 +23,50 @@ const Description: React.FC = () => {
       setShowTabs(true)
     }
   })
+
   return (
-    <IonPage className='Helloo'>
-      <IonContent>
+    <IonPage className='fonttt'>
+      <IonContent className='ion-text-center'>
         <IonGrid>
-          <IonCard></IonCard> <IonCard></IonCard> <IonCard></IonCard>
-          <IonCol></IonCol> <IonCol></IonCol> <IonCol></IonCol>{' '}
-          <IonCol></IonCol> <IonCol></IonCol> <IonCol></IonCol>{' '}
-          <IonCol></IonCol> <IonCol></IonCol> <IonCol></IonCol>{' '}
-          <IonCol></IonCol> <IonCol></IonCol>{' '}
-          <img
-            src='https://i.imgur.com/3oGxL42.jpg'
-            width='150'
-            className='Hello'
-          />
-          <h1 className='ion-text-center'>Size Match </h1>
           <IonRow>
             <IonCol>
-              <IonItem>
-                <IonLabel>Height</IonLabel>
+              <img
+                className='ion-text-center'
+                src='https://i.imgur.com/3oGxL42.jpg'
+                alt='logo'
+                width='150'
+              />
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol className='fonttt'>
+              <h1 className='ion-text-center'>Size Match</h1>
+            </IonCol>
+          </IonRow>
+
+          <IonRow className='fonttt'>
+            <IonCol className='fonttt'>
+              <IonItem className='fonttt'>
+                <IonLabel className='fonttt'>Height:</IonLabel>
                 <IonInput></IonInput>
               </IonItem>
               <IonItem>
-                <IonLabel>Weight</IonLabel>
+                <IonLabel>Weight:</IonLabel>
                 <IonInput></IonInput>
               </IonItem>
               <IonItem>
-                <IonLabel>Age</IonLabel>
+                <IonLabel>Age:</IonLabel>
                 <IonInput></IonInput>
               </IonItem>
             </IonCol>
           </IonRow>
           <IonRow>
-            <IonCol className='ion-text-center'>
-              <IonCard></IonCard>
-              <IonCard></IonCard>
-              <IonCard></IonCard>
-              <IonCard></IonCard>
-              <IonCard></IonCard>
-              <IonCard></IonCard>
+            <IonCol>
               <IonButton
-                routerLink='/ModelChoose'
-                expand='block'
-                size='small'
                 color='warning'
+                fill='outline'
+                className='fonttt'
+                href='ModelChoose'
               >
                 Confirm
               </IonButton>
@@ -106,4 +78,4 @@ const Description: React.FC = () => {
   )
 }
 
-export default Description
+export default SizeMatch

@@ -41,6 +41,7 @@ import {
   trashOutline,
   accessibilityOutline,
   arrowBackOutline,
+  print,
 } from 'ionicons/icons'
 import './Checkout.css'
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import {
   IonCard,
   IonContent,
@@ -53,9 +53,11 @@ const FLGDclothing = [
   },
 ]
 const { v4: uuidv4 } = require('uuid')
+
 const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
   const addCart = (id: string) => {
     let FLGD = FLGDclothing.filter((a) => a.id === id)[0]
+
     let object = {
       uniqueId: uuidv4().toString(),
       shirtId: FLGD.id,
@@ -65,10 +67,17 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
       name: FLGD.name,
 
       price: FLGD.price,
+
+      size: selectedSize,
     }
+
     props.passUpApp(object)
   }
 
+  const onChangeHandler = (event: any) => {
+    setSelectedSize(event.target.value)
+  }
+  const [selectedSize, setSelectedSize] = useState<string>()
   return (
     <IonPage>
       {/*Top Page */}
@@ -96,20 +105,113 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
                 <IonCardHeader className='card'>
                   <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
                   <IonCardSubtitle>$19.99</IonCardSubtitle>
+                  <IonCardContent>
+                    <select value={selectedSize} onChange={onChangeHandler}>
+                      <option value='S'>S</option>,<option value='M'>M</option>,
+                      <option value='L'>L</option>,
+                    </select>
+                  </IonCardContent>
                 </IonCardHeader>
                 <IonCardContent>
                   <IonButton
                     // shape='round'
+
+                    color='light'
+                    fill='solid'
+                    routerLink='Threedee'
+                  >
+                    <IonIcon icon={accessibilityOutline} />
+                  </IonButton>
+
+                  <IonButton
                     color='success'
                     onClick={() => addCart('001')}
                     fill='solid'
                     size='default'
                   >
-                    <IonIcon icon={cartOutline} color='light' />
+                    <IonIcon icon={cartOutline} />
+                  </IonButton>
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+
+            {/*IonRow for shirt img*/}
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <img src='https://i.imgur.com/1anMYfh.png' />
+            </IonCol>
+            {/*IonRow for shirt img*/}
+
+            <IonCol className='card'>
+              <IonCard className='ion-no-margin'>
+                <IonCardHeader className='card'>
+                  <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
+                  <IonCardSubtitle>$19.99</IonCardSubtitle>
+                  <select value={selectedSize} onChange={onChangeHandler}>
+                    <option value='S'>S</option>,<option value='M'>M</option>,
+                    <option value='L'>L</option>,
+                  </select>
+                </IonCardHeader>
+                <IonCardContent>
+                  <IonButton
+                    // shape='round'
+
+                    color='light'
+                    fill='solid'
+                    routerLink='Threedee'
+                  >
+                    <IonIcon icon={accessibilityOutline} />
                   </IonButton>
 
-                  <IonButton color='light' fill='solid' routerLink='Threedee'>
+                  <IonButton
+                    color='success'
+                    onClick={() => addCart('001')}
+                    fill='solid'
+                    size='default'
+                  >
+                    <IonIcon icon={cartOutline} />
+                  </IonButton>
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+
+            {/*IonRow for shirt img*/}
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <img src='https://i.imgur.com/1anMYfh.png' />
+            </IonCol>
+            {/*IonRow for shirt img*/}
+
+            <IonCol className='card'>
+              <IonCard className='ion-no-margin'>
+                <IonCardHeader className='card'>
+                  <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
+                  <IonCardSubtitle>$19.99</IonCardSubtitle>
+                  <select value={selectedSize} onChange={onChangeHandler}>
+                    <option value='S'>S</option>,<option value='M'>M</option>,
+                    <option value='L'>L</option>,
+                  </select>
+                </IonCardHeader>
+                <IonCardContent>
+                  <IonButton
+                    // shape='round'
+
+                    color='light'
+                    fill='solid'
+                    routerLink='Threedee'
+                  >
                     <IonIcon icon={accessibilityOutline} />
+                  </IonButton>
+
+                  <IonButton
+                    color='success'
+                    onClick={() => addCart('001')}
+                    fill='solid'
+                    size='default'
+                  >
+                    <IonIcon icon={cartOutline} />
                   </IonButton>
                 </IonCardContent>
               </IonCard>

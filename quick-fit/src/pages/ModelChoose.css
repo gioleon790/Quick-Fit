@@ -2,3 +2,10 @@
 .k {
   font-family: 'Quicksand', sans-serif;
 }
+
+.vertical-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

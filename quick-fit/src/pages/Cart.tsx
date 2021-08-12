@@ -62,11 +62,12 @@ const Cart: React.FC<{
                       <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
                       <IonCard></IonCard>
                       <IonCardSubtitle>$19.99</IonCardSubtitle>
+                      <IonCardSubtitle>{print.size}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>
                       <IonButton
                         // shape='round'
-                        routerLink='Threedee'
+                        routerLink='BigShirt'
                         fill='solid'
                         size='default'
                         color='light'
@@ -85,20 +86,20 @@ const Cart: React.FC<{
                   </IonCard>
                 </IonCol>
               </IonRow>
-              <IonRow>
-                <IonCol className='ion-text-center'>
-                  <IonButton
-                    href='/Checkout'
-                    shape='round'
-                    color='success'
-                    routerLink='Checkout'
-                  >
-                    Confirm
-                  </IonButton>
-                </IonCol>
-              </IonRow>
             </Fragment>
           ))}
+          <IonRow>
+            <IonCol className='ion-text-center'>
+              <IonButton
+                href='/Checkout'
+                shape='round'
+                color='success'
+                routerLink='Checkout'
+              >
+                Confirm
+              </IonButton>
+            </IonCol>
+          </IonRow>
         </IonGrid>
       </IonContent>
     </IonPage>

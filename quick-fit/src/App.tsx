@@ -65,6 +65,7 @@ import Cart from './pages/Cart'
 import Threedee from './pages/Threedee'
 import Cartt from './CartSource/Cartt'
 import UIContext from './util/Context-API-login'
+import BigShirt from './pages/BigShirt'
 import { setSyntheticTrailingComments } from 'typescript'
 
 const App: React.FC = () => {
@@ -124,6 +125,10 @@ const App: React.FC = () => {
 
             <Route exact path='/ModelChoose'>
               <ModelChoose />
+            </Route>
+
+            <Route exact path='/BigShirt'>
+              <BigShirt />
             </Route>
 
             <Route exact path='/Modelbody'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useContext, useEffect, Fragment } from 'react'
 import {
   IonCard,
   IonContent,
@@ -20,9 +20,16 @@ import {
   IonLabel,
   IonBadge,
   IonTabs,
-  IonButtons,
   IonBackButton,
+  IonButtons,
+  IonItem,
+  IonList,
+  IonItemDivider,
+  IonInput,
+  IonButton,
+  IonAlert,
 } from '@ionic/react'
+import BrandComponent from '../components/BrandComponent'
 import {
   calendar,
   personCircle,
@@ -31,101 +38,20 @@ import {
   gridOutline,
   cartOutline,
   cameraOutline,
+  trashOutline,
+  accessibilityOutline,
+  arrowBackOutline,
 } from 'ionicons/icons'
-import Cartt from './Cart'
-const Aeonarmorclothes = [
-  {
-    id: '01',
-    image: 'https://i.imgur.com/uFqecWs.jpg',
-    name: 'Gray Shirt',
-    price: '19.99',
-  },
+import './Checkout.css'
 
-  {
-    id: '02',
-    image: 'https://i.imgur.com/6flQL5u.jpg',
-    name: 'Blue Shirt',
-    price: '$18.95',
-  },
-]
-const AeonArmor: React.FC = () => {
+const Aeonarmor: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot='start'>
-            <IonBackButton />
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
-
-      <IonContent>
+    <IonPage className='ILOVEMIGUEL'>
+      <IonContent className='ILOVEMIGUEL'>
         <h1 className='ion-text-center'>A E O N A R M O R</h1>
-        <IonSearchbar></IonSearchbar>
-        <IonRow>
-          <IonCol>
-            <IonCard>
-              <img
-                src='https://i.imgur.com/6flQL5u.jpg'
-                height='150'
-                width='150'
-              />
-            </IonCard>
-          </IonCol>
-          <IonCol>
-            <IonCard>
-              <IonCardContent>Mens T Shirt</IonCardContent>
-              <IonCardContent>$19.99</IonCardContent>
-              <IonCardContent>
-                <IonTabBar>
-                  <IonTabButton tab='Cart'>
-                    <IonIcon icon={cartOutline} />
-                  </IonTabButton>
-                  <IonLabel>Cart</IonLabel>
-                </IonTabBar>
-              </IonCardContent>
-              <IonCardContent>
-                <IonTabButton tab='Model'>
-                  <IonIcon icon={cameraOutline} />
-                  <IonLabel>Model</IonLabel>
-                </IonTabButton>
-              </IonCardContent>
-            </IonCard>
-          </IonCol>
-        </IonRow>
-        <IonRow>
-          <IonCol>
-            <IonCard>
-              <img
-                src='https://i.imgur.com/uFqecWs.jpg'
-                width='160'
-                height='160'
-              />
-            </IonCard>
-          </IonCol>
-          <IonCol>
-            <IonCard>
-              <IonCardHeader>Mens T Shirt</IonCardHeader>
-              <IonCardHeader>$19.99</IonCardHeader>
-              <IonCardContent>
-                <IonTabBar>
-                  <IonTabButton tab='Cart'>
-                    <IonIcon icon={cartOutline} />
-                  </IonTabButton>
-                  <IonLabel>Cart</IonLabel>
-                </IonTabBar>
-              </IonCardContent>
-              <IonCardContent>
-                <IonTabButton tab='Model'>
-                  <IonIcon icon={cameraOutline} />
-                  <IonLabel>Model</IonLabel>
-                </IonTabButton>
-              </IonCardContent>
-            </IonCard>
-          </IonCol>
-        </IonRow>
       </IonContent>
     </IonPage>
   )
 }
-export default AeonArmor
+
+export default Aeonarmor

@@ -68,7 +68,9 @@ const Checkout: React.FC = () => {
         <IonContent className='LCL'>
           <h1 className='ion-text-left'>Checkout</h1>
           <h6>1 Item</h6>
-          <h6>___________________________________</h6>
+          <div id='Hello'>
+            {/* <h6 id='Fi'>___________________________________</h6> */}
+          </div>
           <IonRow>
             <IonCol>
               <img src='https://i.imgur.com/1anMYfh.png' />

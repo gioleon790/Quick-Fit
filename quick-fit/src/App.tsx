@@ -65,6 +65,7 @@ import Cart from './pages/Cart'
 import Threedee from './pages/Threedee'
 import Cartt from './CartSource/Cartt'
 import UIContext from './util/Context-API-login'
+import { setSyntheticTrailingComments } from 'typescript'
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<Cartt[]>([])
@@ -74,6 +75,10 @@ const App: React.FC = () => {
 
   const addCart = (obj: Cartt) => {
     setCart([...cart, obj])
+  }
+  const removeCart = (uniqueId: string | undefined) => {
+    const removeItem = cart.filter((print) => print.uniqueId !== uniqueId)
+    setCart(removeItem)
   }
   return (
     <IonApp>
@@ -94,7 +99,7 @@ const App: React.FC = () => {
             </Route>
 
             <Route exact path='/Cart'>
-              <Cart passDownTo={cart} />
+              <Cart passDownTo={cart} removeIteem={removeCart} />
             </Route>
 
             <Route exact path='/FLGD'>

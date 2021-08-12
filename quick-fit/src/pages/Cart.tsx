@@ -35,7 +35,14 @@ import {
 } from 'ionicons/icons'
 import Cartt from '../CartSource/Cartt'
 
-const Cart: React.FC<{ passDownTo: Cartt[] }> = (props) => {
+const Cart: React.FC<{
+  passDownTo?: Cartt[] | undefined
+  removeIteem: (uniqueId: string | undefined) => void
+}> = (props) => {
+  const removeItem = (uniqueId: string | undefined) => {
+    props.removeIteem(uniqueId)
+  }
+
   return (
     <IonPage className='font'>
       <IonContent className='font'>
@@ -43,8 +50,8 @@ const Cart: React.FC<{ passDownTo: Cartt[] }> = (props) => {
         <IonSearchbar className='font'></IonSearchbar>
 
         <IonGrid>
-          {props.passDownTo.map((print: Cartt) => (
-            <Fragment>
+          {props.passDownTo?.map((print: Cartt) => (
+            <Fragment key={print.uniqueId}>
               <IonRow>
                 <IonCol>
                   <img src='https://i.imgur.com/1anMYfh.png' />
@@ -67,7 +74,11 @@ const Cart: React.FC<{ passDownTo: Cartt[] }> = (props) => {
                         <IonIcon icon={accessibilityOutline} />
                       </IonButton>
 
-                      <IonButton color='danger' fill='solid'>
+                      <IonButton
+                        color='danger'
+                        fill='solid'
+                        onClick={() => removeItem(print.uniqueId)}
+                      >
                         <IonIcon icon={trashOutline} />
                       </IonButton>
                     </IonCardContent>

@@ -52,11 +52,21 @@ const FLGDclothing = [
     price: '$20.00',
   },
 ]
-
+const { v4: uuidv4 } = require('uuid')
 const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
   const addCart = (id: string) => {
     let FLGD = FLGDclothing.filter((a) => a.id === id)[0]
-    props.passUpApp(FLGD)
+    let object = {
+      uniqueId: uuidv4().toString(),
+      shirtId: FLGD.id,
+
+      image: FLGD.image,
+
+      name: FLGD.name,
+
+      price: FLGD.price,
+    }
+    props.passUpApp(object)
   }
 
   return (

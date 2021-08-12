@@ -59,13 +59,14 @@ import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
 
 /* Theme variables */
-import './theme/variables.css'
+// import './theme/variables.css'
 import AeonArmor from './pages/Aeonarmor'
 import Cart from './pages/Cart'
 import Threedee from './pages/Threedee'
 import Cartt from './CartSource/Cartt'
 import UIContext from './util/Context-API-login'
 import BigShirt from './pages/BigShirt'
+import ColoredLine from './components/Lines'
 import { setSyntheticTrailingComments } from 'typescript'
 
 const App: React.FC = () => {

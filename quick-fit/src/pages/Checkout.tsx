@@ -44,6 +44,7 @@ import {
   print,
 } from 'ionicons/icons'
 import './Checkout.css'
+import ColoredLine from '../components/Lines'
 
 const Checkout: React.FC = () => {
   const [alert, setAlert] = useState<boolean>()
@@ -70,6 +71,7 @@ const Checkout: React.FC = () => {
           <h1 className='ion-text-left'>Checkout</h1>
           <h6>1 Item</h6>
           <div id='Hello'>
+            <ColoredLine color='black' />
             {/* <h6 id='Fi'>___________________________________</h6> */}
           </div>
           <IonRow>
@@ -101,7 +103,9 @@ const Checkout: React.FC = () => {
               </IonCard>
             </IonCol>
           </IonRow>
-          <h6>___________________________________</h6>
+
+          <ColoredLine color='black' />
+          {/* <h6>___________________________________</h6> */}
           <IonRow>
             <IonCol>
               <h6>Subtotal</h6>

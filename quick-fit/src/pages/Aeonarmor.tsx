@@ -46,8 +46,8 @@ import './Checkout.css'
 
 const Aeonarmor: React.FC = () => {
   return (
-    <IonPage className='ILOVEMIGUEL'>
-      <IonContent className='ILOVEMIGUEL'>
+    <IonPage className=''>
+      <IonContent className=''>
         <h1 className='ion-text-center'>A E O N A R M O R</h1>
       </IonContent>
     </IonPage>

@@ -69,15 +69,21 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
       price: FLGD.price,
 
       size: selectedSize,
+
+      slum: setSize,
     }
 
     props.passUpApp(object)
   }
 
-  const onChangeHandler = (event: any) => {
+  const notPerfect = (event: any) => {
     setSelectedSize(event.target.value)
   }
+  const yesNo = (event: any) => {
+    setSetSize(event.target.value)
+  }
   const [selectedSize, setSelectedSize] = useState<string>()
+  const [setSize, setSetSize] = useState<string>()
   return (
     <IonPage>
       {/*Top Page */}
@@ -105,11 +111,15 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
                 <IonCardHeader className='card'>
                   <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
                   <IonCardSubtitle>$19.99</IonCardSubtitle>
+
                   <IonCardContent>
-                    <select value={selectedSize} onChange={onChangeHandler}>
-                      <option value='S'>S</option>,<option value='M'>M</option>,
-                      <option value='L'>L</option>,
-                    </select>
+                    <IonCol>
+                      <select value={selectedSize} onChange={notPerfect}>
+                        <option value='S'>S</option>,
+                        <option value='M'>M</option>,
+                        <option value='L'>L</option>,
+                      </select>
+                    </IonCol>
                   </IonCardContent>
                 </IonCardHeader>
                 <IonCardContent>
@@ -137,9 +147,10 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
 
             {/*IonRow for shirt img*/}
           </IonRow>
+
           <IonRow>
             <IonCol>
-              <img src='https://i.imgur.com/1anMYfh.png' />
+              <img src='https://i.imgur.com/jxhLh1W.png' />
             </IonCol>
             {/*IonRow for shirt img*/}
 
@@ -148,10 +159,6 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
                 <IonCardHeader className='card'>
                   <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
                   <IonCardSubtitle>$19.99</IonCardSubtitle>
-                  <select value={selectedSize} onChange={onChangeHandler}>
-                    <option value='S'>S</option>,<option value='M'>M</option>,
-                    <option value='L'>L</option>,
-                  </select>
                 </IonCardHeader>
                 <IonCardContent>
                   <IonButton
@@ -178,47 +185,7 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
 
             {/*IonRow for shirt img*/}
           </IonRow>
-          <IonRow>
-            <IonCol>
-              <img src='https://i.imgur.com/1anMYfh.png' />
-            </IonCol>
-            {/*IonRow for shirt img*/}
 
-            <IonCol className='card'>
-              <IonCard className='ion-no-margin'>
-                <IonCardHeader className='card'>
-                  <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
-                  <IonCardSubtitle>$19.99</IonCardSubtitle>
-                  <select value={selectedSize} onChange={onChangeHandler}>
-                    <option value='S'>S</option>,<option value='M'>M</option>,
-                    <option value='L'>L</option>,
-                  </select>
-                </IonCardHeader>
-                <IonCardContent>
-                  <IonButton
-                    // shape='round'
-
-                    color='light'
-                    fill='solid'
-                    routerLink='Threedee'
-                  >
-                    <IonIcon icon={accessibilityOutline} />
-                  </IonButton>
-
-                  <IonButton
-                    color='success'
-                    onClick={() => addCart('001')}
-                    fill='solid'
-                    size='default'
-                  >
-                    <IonIcon icon={cartOutline} />
-                  </IonButton>
-                </IonCardContent>
-              </IonCard>
-            </IonCol>
-
-            {/*IonRow for shirt img*/}
-          </IonRow>
           {/*IonRow for shirt img*/}
         </IonGrid>
       </IonContent>

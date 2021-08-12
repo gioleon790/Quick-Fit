@@ -55,26 +55,26 @@ const ModelChoose: React.FC = () => {
 
   const modelViewArray = [
     'https://i.imgur.com/XhW77Wh.png',
-    'https://files.slack.com/files-pri/T17R4TFAM-F02AY7V54LT/image_from_ios.png',
+    'https://i.imgur.com/fXs9216.png',
   ]
 
   const goRight = () => {
     setSwitchModel(modelViewArray[count])
 
-    if (count === 0) {
-      setCount(1)
+    if (count === 2) {
+      setCount(0)
     } else {
-      setCount(count + 0)
+      setCount(count + 1)
     }
   }
 
   const goLeft = () => {
     setSwitchModel(modelViewArray[count])
 
-    if (count === 1) {
-      setCount(0)
+    if (count === -1) {
+      setCount(1)
     } else {
-      setCount(count - 0)
+      setCount(count - 1)
     }
   }
 
@@ -89,7 +89,7 @@ const ModelChoose: React.FC = () => {
     <IonPage className='k'>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Model</IonTitle>
+          <IonTitle> Your Model</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -97,7 +97,7 @@ const ModelChoose: React.FC = () => {
       <IonCard></IonCard>
       <IonRow className='ion-text-center'>
         <IonCol size='2' className='vertical-button ion-text-center'>
-          <IonButton color='light'>
+          <IonButton onClick={goLeft} color='light'>
             {' '}
             <IonIcon icon={caretBackOutline} />{' '}
           </IonButton>
@@ -108,7 +108,7 @@ const ModelChoose: React.FC = () => {
         </IonCol>
 
         <IonCol size='2' className='vertical-button ion-text-center'>
-          <IonButton color='light'>
+          <IonButton onClick={goRight} color='light'>
             <IonIcon icon={caretForwardOutline} />
           </IonButton>
         </IonCol>

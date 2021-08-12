@@ -63,6 +63,11 @@ const Threedee: React.FC = () => {
   }
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle> Your Model</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent>
         <IonRow>
           <IonCol>

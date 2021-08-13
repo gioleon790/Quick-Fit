@@ -1,41 +1,17 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState } from 'react'
 import {
   IonCard,
   IonContent,
   IonHeader,
   IonPage,
-  IonSearchbar,
   IonTitle,
   IonToolbar,
-  IonCardHeader,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonGrid,
   IonRow,
   IonCol,
-  IonTabBar,
-  IonTabButton,
   IonIcon,
-  IonLabel,
-  IonBadge,
-  IonTabs,
-  IonButtons,
-  IonBackButton,
-  IonList,
-  IonItemDivider,
-  IonItem,
-  IonInput,
   IonButton,
 } from '@ionic/react'
 import {
-  calendar,
-  personCircle,
-  map,
-  informationCircle,
-  gridOutline,
-  cartOutline,
-  cameraOutline,
   syncOutline,
 } from 'ionicons/icons'
 
@@ -65,7 +41,7 @@ const Threedee: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle> Your Model</IonTitle>
+          <IonTitle className="ion-text-center"> Your Model</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -82,7 +58,7 @@ const Threedee: React.FC = () => {
         <IonRow>
           <IonCol className='ion-text-center'>
             <IonButton onClick={onRotateHandler} shape='round' color='medium'>
-              <IonIcon icon={syncOutline} />{' '}
+              <IonIcon icon={syncOutline} />
             </IonButton>
           </IonCol>
         </IonRow>

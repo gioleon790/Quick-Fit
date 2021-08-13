@@ -2,34 +2,18 @@ import React, { Fragment } from 'react'
 import {
   IonCard,
   IonContent,
-  IonHeader,
   IonPage,
   IonSearchbar,
-  IonTitle,
-  IonToolbar,
   IonCardHeader,
   IonCardContent,
   IonCardSubtitle,
-  IonCardTitle,
   IonGrid,
   IonRow,
   IonCol,
-  IonTabBar,
-  IonTabButton,
   IonIcon,
-  IonLabel,
-  IonBadge,
-  IonTabs,
   IonButton,
 } from '@ionic/react'
 import {
-  calendar,
-  personCircle,
-  map,
-  informationCircle,
-  gridOutline,
-  cartOutline,
-  cameraOutline,
   trashOutline,
   accessibilityOutline,
 } from 'ionicons/icons'
@@ -54,14 +38,14 @@ const Cart: React.FC<{
             <Fragment key={print.uniqueId}>
               <IonRow>
                 <IonCol>
-                  <img src='https://i.imgur.com/1anMYfh.png' />
+                  <img src={print.image} alt="shirt 01"/>
                 </IonCol>
                 <IonCol className='LCL'>
                   <IonCard className='ion-no-margin'>
                     <IonCardHeader className='LCL'>
-                      <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
+                      <IonCardSubtitle>{print.name}</IonCardSubtitle>
                       <IonCard></IonCard>
-                      <IonCardSubtitle>$19.99</IonCardSubtitle>
+                      <IonCardSubtitle>${print.price}</IonCardSubtitle>
                       <IonCardSubtitle>{print.size}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>

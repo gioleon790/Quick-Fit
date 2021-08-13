@@ -1,149 +1,130 @@
-import React, { useState, useContext, useEffect, Fragment } from 'react'
+import React, { useState, Fragment } from "react";
 import {
   IonCard,
   IonContent,
   IonHeader,
   IonPage,
-  IonSearchbar,
-  IonTitle,
   IonToolbar,
   IonCardHeader,
   IonCardContent,
   IonCardSubtitle,
-  IonCardTitle,
-  IonGrid,
   IonRow,
   IonCol,
-  IonTabBar,
-  IonTabButton,
   IonIcon,
-  IonLabel,
-  IonBadge,
-  IonTabs,
   IonBackButton,
   IonButtons,
-  IonItem,
-  IonList,
-  IonItemDivider,
-  IonInput,
   IonButton,
   IonAlert,
-} from '@ionic/react'
-import BrandComponent from '../components/BrandComponent'
-import {
-  calendar,
-  personCircle,
-  map,
-  informationCircle,
-  gridOutline,
-  cartOutline,
-  cameraOutline,
-  trashOutline,
-  accessibilityOutline,
-  arrowBackOutline,
-  print,
-} from 'ionicons/icons'
-import './Checkout.css'
-import ColoredLine from '../components/Lines'
+  IonGrid,
+} from "@ionic/react";
+import "./Checkout.css";
+import ColoredLine from "../components/Lines";
+import Cartt from "../CartSource/Cartt";
 
-const Checkout: React.FC = () => {
-  const [alert, setAlert] = useState<boolean>()
+const Checkout: React.FC<{ passDownTo?: Cartt[] | undefined }> = (props) => {
+  const [alert, setAlert] = useState<boolean>();
   const onSubmitHandler = () => {
-    setAlert(true)
-  }
+    setAlert(true);
+  };
   return (
     <Fragment>
       <IonAlert
         isOpen={alert!}
-        message='Confirmation Email Has Been Sent'
-        buttons={[{ text: 'Ok', handler: () => setAlert(false) }]}
+        message="Confirmation Email Has Been Sent"
+        buttons={[{ text: "Ok", handler: () => setAlert(false) }]}
       />
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonButtons slot='start'>
+            <IonButtons slot="start">
               <IonBackButton />
             </IonButtons>
           </IonToolbar>
         </IonHeader>
 
-        <IonContent className='LCL'>
-          <h1 className='ion-text-left'>Checkout</h1>
-          <h6>1 Item</h6>
-          <div id='Hello'>
-            <ColoredLine color='black' />
+        <IonContent className="LCL">
+          <h1 className="ion-text-left">Checkout</h1>
+          <h6>{props.passDownTo?.length} Item(s)</h6>
+          <div id="Hello">
+            <ColoredLine color="black" />
             {/* <h6 id='Fi'>___________________________________</h6> */}
           </div>
-          <IonRow>
-            <IonCol>
-              <img src='https://i.imgur.com/1anMYfh.png' />
-            </IonCol>
-            <IonCol className='LCL'>
-              <IonCard className='ion-no-margin'>
-                <IonCardHeader className='LCL'>
-                  <IonCardSubtitle>Mens T Shirt</IonCardSubtitle>
-                  <IonCard></IonCard>
-                  <IonCardSubtitle>$19.99</IonCardSubtitle>
-                </IonCardHeader>
-                <IonCardContent>
-                  <IonButton
-                    // shape='round'
+          <IonGrid>
+            {props.passDownTo?.map((print: Cartt) => (
+              <Fragment key={print.uniqueId}>
+                <IonRow>
+                  <IonCol>
+                    <img src={print.image} alt="shirt 01" />
+                  </IonCol>
+                  <IonCol className="LCL">
+                    <IonCard className="ion-no-margin">
+                      <IonCardHeader className="LCL">
+                        <IonCardSubtitle>{print.name}</IonCardSubtitle>
+                        <IonCard></IonCard>
+                        <IonCardSubtitle>${print.price}</IonCardSubtitle>
+                        <IonCard></IonCard>
+                        <IonCardSubtitle>{print.size}</IonCardSubtitle>
+                      </IonCardHeader>
+                      <IonCardContent></IonCardContent>
+                    </IonCard>
+                  </IonCol>
+                </IonRow>
+              </Fragment>
+            ))}
 
-                    fill='solid'
-                    size='default'
-                    color='light'
-                  >
-                    <IonIcon icon={accessibilityOutline} />
-                  </IonButton>
-
-                  <IonButton color='danger' fill='solid'>
-                    <IonIcon icon={trashOutline} />
-                  </IonButton>
-                </IonCardContent>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-
-          <ColoredLine color='black' />
-          {/* <h6>___________________________________</h6> */}
-          <IonRow>
-            <IonCol>
-              <h6>Subtotal</h6>
-            </IonCol>
-            <IonCol>
-              <h6 className='ion-text-right'>$19.99</h6>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <h6>Tax</h6>
-            </IonCol>
-            <IonCol>
-              <h6 className='ion-text-right'>$1.29</h6>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <h4>Total</h4>
-            </IonCol>
-            <IonCol>
-              <h4 className='ion-text-right'>$21.28</h4>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol className='ion-text-center'>
-              <IonButton
-                color='success'
-                shape='round'
-                onClick={onSubmitHandler}
-              >
-                Send Link
-              </IonButton>
-            </IonCol>
-          </IonRow>
+            <ColoredLine color="black" />
+            {/* <h6>___________________________________</h6> */}
+            <IonRow>
+              <IonCol>
+                <h6>Subtotal</h6>
+              </IonCol>
+              <IonCol>
+                <h6 className="ion-text-right">
+                  $
+                  {props.passDownTo?.reduce(
+                    (a, v) => (a = a + Number(v.price)),
+                    0
+                  ).toFixed(2)}
+                </h6>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <h6>Tax</h6>
+              </IonCol>
+              <IonCol>
+                <h6 className="ion-text-right">$1.29</h6>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <h4>Total</h4>
+              </IonCol>
+              <IonCol>
+                <h4 className="ion-text-right">
+                  $
+                  {props.passDownTo!.reduce(
+                    (a, v) => (a = a + Number(v.price)),
+                    0
+                  ) + Number(1.95)}
+                </h4>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol className="ion-text-center">
+                <IonButton
+                  color="success"
+                  shape="round"
+                  onClick={onSubmitHandler}
+                >
+                  Send Link
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
         </IonContent>
       </IonPage>
     </Fragment>
-  )
-}
-export default Checkout
+  );
+};
+export default Checkout;

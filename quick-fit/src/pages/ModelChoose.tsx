@@ -61,7 +61,7 @@ const ModelChoose: React.FC = () => {
   const goRight = () => {
     setSwitchModel(modelViewArray[count])
 
-    if (count === 2) {
+    if (count === 1) {
       setCount(0)
     } else {
       setCount(count + 1)
@@ -71,10 +71,11 @@ const ModelChoose: React.FC = () => {
   const goLeft = () => {
     setSwitchModel(modelViewArray[count])
 
-    if (count === -1) {
-      setCount(1)
+
+    if (count === 1) {
+      setCount(0)
     } else {
-      setCount(count - 1)
+      setCount(count + 1)
     }
   }
 
@@ -89,11 +90,10 @@ const ModelChoose: React.FC = () => {
     <IonPage className='k'>
       <IonHeader>
         <IonToolbar>
-          <IonTitle> Your Model</IonTitle>
+          <IonTitle className="ion-text-center"> Choose Your Model</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonCard></IonCard>
       <IonCard></IonCard>
       <IonRow className='ion-text-center'>
         <IonCol size='2' className='vertical-button ion-text-center'>
@@ -103,7 +103,7 @@ const ModelChoose: React.FC = () => {
           </IonButton>
         </IonCol>
         <IonCol size='8'>
-          <img src={switchModel} height='300' />
+          <img src={switchModel} height='350' alt="model switching"/>
           <IonCard></IonCard>
         </IonCol>
 

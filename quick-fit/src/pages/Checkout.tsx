@@ -106,7 +106,7 @@ const Checkout: React.FC<{ passDownTo?: Cartt[] | undefined }> = (props) => {
                   {props.passDownTo!.reduce(
                     (a, v) => (a = a + Number(v.price)),
                     0
-                  ) + Number(1.95)}
+                  ) + Number(1.95).toFixed(2)}
                 </h4>
               </IonCol>
             </IonRow>

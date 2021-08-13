@@ -65,6 +65,9 @@ const BigShirt: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
           <IonTitle> Your Model</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -82,7 +85,7 @@ const BigShirt: React.FC = () => {
         <IonRow>
           <IonCol className='ion-text-center'>
             <IonButton onClick={onRotateHandler} shape='round' color='medium'>
-              <IonIcon icon={syncOutline} />{' '}
+              <IonIcon icon={syncOutline} />
             </IonButton>
           </IonCol>
         </IonRow>

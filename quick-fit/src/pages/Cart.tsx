@@ -50,8 +50,8 @@ const Cart: React.FC<{
                     </IonCardHeader>
                     <IonCardContent>
                       <IonButton
-                        // shape='round'
-                        routerLink='BigShirt'
+                        // routerLink='BigShirt'
+                        routerLink={print.size === "M" ? "/ThreeDee" : "/BigShirt"}
                         fill='solid'
                         size='default'
                         color='light'

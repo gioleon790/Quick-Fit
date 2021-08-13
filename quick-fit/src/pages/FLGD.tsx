@@ -143,7 +143,7 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
 
                   <IonCardContent>
                     <IonCol>
-                      <select value={selectedSize} onChange={notPerfect}>
+                      <select>
                         <option value="S">S</option>,
                         <option value="M">M</option>,
                         <option value="L">L</option>,
@@ -153,8 +153,6 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
                 </IonCardHeader>
                 <IonCardContent>
                   <IonButton
-                    // shape='round'
-
                     color="light"
                     fill="solid"
                     routerLink="Threedee"
@@ -184,5 +182,3 @@ const FLGD: React.FC<{ passUpApp: (obj: Cartt) => void }> = (props) => {
 };
 
 export default FLGD;
-
-// "https://i.imgur.com/jxhLh1W.png"
